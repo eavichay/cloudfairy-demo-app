@@ -1,0 +1,4 @@
+node_modules/
+dist
+.cloudfairy.build
+.cloudfairy/ci-cd

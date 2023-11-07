@@ -1,0 +1,25 @@
+{
+  "name": "webserver",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "DB_HOST=localhost DB_PORT=27017 nodemon ./src/api.js",
+    "start": "node ./api.js"
+  },
+  "devDependencies": {
+    "nodemon": "3.0.1"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "express-async-handler": "^1.2.0",
+    "jsonwebtoken": "^9.0.2",
+    "koa": "^2.14.2",
+    "mongoose": "^8.0.0",
+    "mongoose-unique-validator": "^4.0.0",
+    "slugify": "^1.6.6"
+  }
+}

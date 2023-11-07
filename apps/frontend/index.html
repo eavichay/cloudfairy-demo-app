@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=IBM+Plex+Sans:wght@300;400;600;700&family=Noto+Serif:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://nordcdn.net/ds/css/3.1.1/nord.min.css"
+        integrity="sha384-zz2Vh/uaPtnKKnKq4a8aP/R7ybJEZD3LuwnvmLE+p42C+Zjr2R0Y+PKwdABWc61A" crossorigin="anonymous" />
+
+    <title>Document</title>
+    <style>
+        html, body {
+            font-family: 'Noto Serif', serif;
+            width: 100vw;
+            height: 100vh;
+            padding: 0rem;
+            margin: 0;
+        }
+        body {
+            margin: 0 auto;
+            max-width: 60rem;
+        }
+        todo-app {
+            background: rgba(255, 255, 255, 0.7);
+            filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.25));
+            display: block;
+            min-height: 100%;
+        }
+
+        .bg {
+            animation:slide 3s ease-in-out infinite alternate;
+            background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+            bottom:0;
+            left:-50%;
+            opacity:.5;
+            position:fixed;
+            right:-50%;
+            top:0;
+            z-index:-1;
+        }
+
+        .bg2 {
+            animation-direction:alternate-reverse;
+            animation-duration:4s;
+        }
+
+        .bg3 {
+         animation-duration:5s;
+        }
+        @keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
+}
+    </style>
+</head>
+<body>
+    <script type="module" src="./src/app.ts"></script>
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+    <todo-app></todo-app>
+</body>
+</html>

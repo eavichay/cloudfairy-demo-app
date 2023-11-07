@@ -1,0 +1,101 @@
+@host=http://api-svc.localhost:8080
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjU0Mzk3ZTcxMzg3ZDY4MDQ5NzU5YmUwIiwiZW1haWwiOiJlYXZpY2hheUBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRGS21zYUVxWG1LSDhaSE5TdlR2SmNlRXJMWjE5NUdZcDF5ZU1BZlQxSU00YjJMSU1CR0NDaSJ9LCJpYXQiOjE2OTkxNzQyNzcsImV4cCI6MTY5OTI2MDY3N30.zX-BDl2U_Hs9AuPbxvnbHfkM-lD6dmPNFAnqmCntNFo
+
+# Get User
+GET {{host}}/user
+Authorization: Token {{token}}
+
+###
+
+# Login
+POST {{host}}/user/login
+Content-Type: application/json
+
+{
+    "user": {
+        "email": "eavichay@gmail.com",
+        "password": "1234"
+    }
+}
+
+###
+
+# Sign up
+POST {{host}}/user/register
+Content-Type: application/json
+
+{
+    "user": {
+        "email": "eavichay@gmail.com",
+        "password": "1234",
+        "username": "eavichay"
+    }
+}
+
+
+
+
+
+
+
+
+
+
+### TASKS
+
+# get all tasklists
+GET {{host}}/tasklists
+Authorization: Token {{token}}
+
+###
+
+# Create a tasklist
+POST {{host}}/tasklists
+Authorization: Token {{token}}
+Content-Type: application/json
+
+{
+    "title": "My first list"
+}
+
+###
+
+# Delete Task list
+DELETE {{host}}/tasklists/65439ae4b9b990ec06f0c221
+Authorization: Token {{token}}
+
+
+###
+
+# Create a task
+POST {{host}}/tasklists/65439addb9b990ec06f0c21f
+Content-Type: application/json
+Authorization: Token {{token}}
+
+{
+    "title": "Do something",
+    "description": "This is a long description"
+}
+
+###
+
+# Update task
+POST {{host}}/task/6543b16b48e5deee93ab2231
+Content-Type: application/json
+Authorization: Token {{token}}
+
+{
+    "title": "Changed the title",
+    "description": "KUKU"
+}
+
+####
+
+# Task completion
+POST {{host}}/task/completion/6543b16b48e5deee93ab2231
+Content-Type: application/json
+Authorization: Token {{token}}
+
+{
+    "isComplete": true
+}

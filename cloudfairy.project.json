@@ -1,0 +1,188 @@
+{
+  "project": {
+    "libraries": {
+      "cloudfairy": "/Users/eavichay/.cloudfairy/libraries/cloudfairy"
+    },
+    "projectName": "webapp-demo",
+    "properties": {
+      "dev": {
+        "l26w9ytf9a": {
+          "service_name": "api-svc",
+          "dockerfile_path": "./apps/webserver/Dockerfile",
+          "container_port": "8081",
+          "debugger_port": "",
+          "isexposed": "true"
+        },
+        "1hjxs9q26rl": {
+          "bucketName": "frontend",
+          "indexPage": "index.html",
+          "errorPage": "error.html"
+        },
+        "1o1xcu86949": {
+          "service_name": "mongo-svc",
+          "dockerhub_image": "mongo",
+          "container_port": "27017",
+          "isexposed": "false",
+          "env_vars": [
+            "MONGO_INITDB_ROOT_USERNAME=admin",
+            "MONGO_INITDB_ROOT_PASSWORD=pass"
+          ]
+        },
+        "xyx8ml0edq": {
+          "hostname": "DB_HOST",
+          "port": "DB_PORT"
+        }
+      }
+    },
+    "currentWorkingEnvironment": "dev",
+    "globalConfig": {},
+    "components": [
+      {
+        "type": "component",
+        "properties": [
+          {
+            "name": "service_name",
+            "defaultValue": "dbservice",
+            "value": "api-svc"
+          },
+          {
+            "name": "dockerfile_path",
+            "defaultValue": "",
+            "value": "./apps/webserver/Dockerfile"
+          },
+          {
+            "name": "container_port",
+            "defaultValue": "8080",
+            "value": "8081"
+          },
+          {
+            "name": "debugger_port",
+            "defaultValue": "",
+            "value": ""
+          },
+          {
+            "name": "isexposed",
+            "defaultValue": true,
+            "value": "true"
+          }
+        ],
+        "localName": "api-server",
+        "uuid": "l26w9ytf9a",
+        "qName": "cloudfairy/service",
+        "annotations": {}
+      },
+      {
+        "type": "component",
+        "properties": [
+          {
+            "name": "bucketName",
+            "defaultValue": "my-website",
+            "value": "frontend"
+          },
+          {
+            "name": "indexPage",
+            "defaultValue": "index.html",
+            "value": "index.html"
+          },
+          {
+            "name": "errorPage",
+            "defaultValue": "error.html",
+            "value": "error.html"
+          }
+        ],
+        "localName": "frontend",
+        "uuid": "1hjxs9q26rl",
+        "qName": "cloudfairy/public-website",
+        "annotations": {}
+      },
+      {
+        "type": "component",
+        "properties": [
+          {
+            "name": "service_name",
+            "defaultValue": "dbservice",
+            "value": "mongo-svc"
+          },
+          {
+            "name": "dockerhub_image",
+            "defaultValue": "nginx",
+            "value": "mongo"
+          },
+          {
+            "name": "container_port",
+            "defaultValue": "8080",
+            "value": "27017"
+          },
+          {
+            "name": "isexposed",
+            "defaultValue": true,
+            "value": "false"
+          },
+          {
+            "name": "env_vars",
+            "defaultValue": "CLOUDFAIRY=true",
+            "value": [
+              "MONGO_INITDB_ROOT_USERNAME=admin",
+              "MONGO_INITDB_ROOT_PASSWORD=pass"
+            ]
+          }
+        ],
+        "localName": "mongo",
+        "uuid": "1o1xcu86949",
+        "qName": "cloudfairy/docker",
+        "annotations": {}
+      }
+    ],
+    "connectors": [
+      {
+        "type": "connector",
+        "properties": [
+          {
+            "name": "hostname",
+            "defaultValue": "SVC_HOST",
+            "value": "DB_HOST"
+          },
+          {
+            "name": "port",
+            "defaultValue": "SVC_PORT",
+            "value": "DB_PORT"
+          }
+        ],
+        "localName": "conn_33043_0",
+        "uuid": "xyx8ml0edq",
+        "qName": "cloudfairy/service_to_dockerhub",
+        "annotations": {},
+        "from": "l26w9ytf9a",
+        "to": "1o1xcu86949"
+      }
+    ],
+    "dependencyMap": {},
+    "metadata": {
+      "canvas": {
+        "x": 0,
+        "y": 0
+      },
+      "designer": {},
+      "components": {
+        "l26w9ytf9a": {
+          "x": 0,
+          "y": 0
+        },
+        "1hjxs9q26rl": {
+          "x": 0,
+          "y": 0
+        },
+        "1o1xcu86949": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "connections": [
+        {
+          "from": "l26w9ytf9a",
+          "to": "1o1xcu86949"
+        }
+      ]
+    }
+  }
+}
