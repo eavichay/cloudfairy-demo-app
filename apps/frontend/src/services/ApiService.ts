@@ -1,4 +1,4 @@
-const ENDPOINT = "http://api-svc.localhost:8080";
+const ENDPOINT = "http://bff.localhost:8000";
 
 const FETCH_DEFAULTS = (): RequestInit => ({
   credentials: "same-origin",
