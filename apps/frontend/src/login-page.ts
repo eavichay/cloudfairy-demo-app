@@ -37,7 +37,7 @@ export class LoginPage extends LitElement {
       </style>
       <form @submit=${this.handleSubmit}>
         <fieldset>
-          <legend>Email</legend>
+          <legend>Your Email</legend>
           <input type="email" name="email" />
         </fieldset>
         ${this.currentMode === "register"

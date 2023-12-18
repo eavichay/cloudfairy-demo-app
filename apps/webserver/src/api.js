@@ -21,6 +21,10 @@ const connectDB = async () => {
 };
 
 app.use(cors());
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", req.headers["origin"] || "*");
+  return next();
+});
 app.use(express.json());
 app.use(cookieParser());
 
