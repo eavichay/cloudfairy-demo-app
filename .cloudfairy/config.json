@@ -1,0 +1,12 @@
+{
+  "libraries": {
+    "cloudfairy": "./cloudfairy"
+  },
+  "settings": {},
+  "defaultLibrary": "cloudfairy",
+  "plugins": {
+    "@cloudfairy/plugin-backstage": {
+      "source": "npm"
+    }
+  }
+}

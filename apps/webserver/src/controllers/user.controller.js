@@ -130,9 +130,28 @@ const updateUser = asyncHandler(async (req, res) => {
   });
 });
 
+/**
+ * @desc get random name from randomnames microservice
+ * @route GET /api/user/randomname
+ * @access Public
+ * @return { randomName: string }
+ */
+const getRandomName = asyncHandler(async (req, res) => {
+  try {
+    const { RN_HOST, RN_PORT } = process.env;
+    const url = `http://${RN_HOST}:${RN_PORT}`;
+    const randomName = await (await fetch(url)).text();
+    res.status(200).json({ randomName });
+  } catch (error) {
+    console.error(error);
+    res.status(200).json({ randomName: "John Doe" });
+  }
+});
+
 module.exports = {
   registerUser,
   getCurrentUser,
   userLogin,
   updateUser,
+  getRandomName,
 };

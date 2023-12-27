@@ -19,9 +19,20 @@ export class LoginPage extends LitElement {
   private apiService = ApiService;
 
   @state()
+  randomName = "";
+
+  @state()
   currentMode: "login" | "register" = "login";
 
+  connectedCallback(): void {
+    super.connectedCallback();
+    this.apiService.getRandomName().then((name) => {
+      this.randomName = name;
+    });
+  }
+
   render() {
+    if (!this.randomName) return html`Please wait...`;
     const toggleButtonText =
       this.currentMode === "login" ? "New User?" : "Existing User";
     return html`
@@ -44,7 +55,7 @@ export class LoginPage extends LitElement {
           ? html`
               <fieldset>
                 <legend>Username</legend>
-                <input type="text" name="username" />
+                <input type="text" name="username" value=${this.randomName} />
               </fieldset>
             `
           : ""}

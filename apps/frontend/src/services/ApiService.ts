@@ -13,6 +13,12 @@ class ApiServiceClass extends EventTarget {
   user: any = null;
   token: string = localStorage.getItem("todo-token") || "";
 
+  async getRandomName() {
+    const res = await fetch(`${ENDPOINT}/user/random`);
+    const { randomName } = await res.json();
+    return randomName;
+  }
+
   async autoLogin() {
     const res = await fetch(`${ENDPOINT}/user`, {
       method: "GET",
