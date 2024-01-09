@@ -148,3 +148,17 @@ The API server will store your data using the mongo as database.
 - TBD: How to use addons and the plugin system to provision argoCD artifacts alongside the infrastructure.
 - TBD: How to resolve the missing dependencies (such as cluster, network, etc) so we can manually configure it, or use our own modules with cloudfairy.
 - TBD: More tutorials
+
+# Add external for fun and profit
+Name: mongoui
+Image: `mongo-express`
+Port: 8081
+Expose to ingress `true`
+Env: `ME_CONFIG_BASICAUTH_USERNAME=admin,ME_CONFIG_BASICAUTH_PASSWORD=pass,ME_CONFIG_MONGODB_ADMINUSERNAME=admin,ME_CONFIG_MONGODB_ADMINPASSWORD=pass`
+Connect to mongo:
+- ME_CONFIG_MONGODB_SERVER
+- ME_CONFIG_MONGODB_PORT
+
+browse to mongoui.localhost:8000
+user=admin
+password=pass

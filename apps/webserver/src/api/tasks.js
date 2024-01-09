@@ -11,13 +11,13 @@ const {
 } = require("../controllers/tasks.controller");
 const router = express.Router();
 
-router.get("/tasklists", verifyJWT, getTaskLists);
-router.post("/tasklists", verifyJWT, createTaskList);
-router.delete("/tasklists/:id", verifyJWT, deleteTaskList);
-router.post("/tasklists/:taskListId", verifyJWT, createTask);
+router.get("/api/tasklists", verifyJWT, getTaskLists);
+router.post("/api/tasklists", verifyJWT, createTaskList);
+router.delete("/api/tasklists/:id", verifyJWT, deleteTaskList);
+router.post("/api/tasklists/:taskListId", verifyJWT, createTask);
 
-router.post("/task/completion/:taskId", verifyJWT, updateCompletion);
-router.post("/task/:taskId", verifyJWT, updateTask);
-router.delete("/task/:taskId", verifyJWT, deleteTask);
+router.post("/api/task/completion/:taskId", verifyJWT, updateCompletion);
+router.post("/api/task/:taskId", verifyJWT, updateTask);
+router.delete("/api/task/:taskId", verifyJWT, deleteTask);
 
 module.exports.TasksRouter = router;

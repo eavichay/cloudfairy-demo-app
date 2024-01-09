@@ -1,4 +1,4 @@
-const ENDPOINT = "http://bff.localhost:8000";
+const ENDPOINT = "http://bff.localhost:8000/api";
 
 const FETCH_DEFAULTS = (): RequestInit => ({
   credentials: "same-origin",

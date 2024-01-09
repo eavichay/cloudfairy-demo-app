@@ -1,12 +1,8 @@
 {
   "libraries": {
-    "cloudfairy": "./cloudfairy"
+    "cloudfairy": "git+https://github.com/cloud-fairy/component-library.git"
   },
   "settings": {},
   "defaultLibrary": "cloudfairy",
-  "plugins": {
-    "@cloudfairy/plugin-backstage": {
-      "source": "npm"
-    }
-  }
+  "plugins": {}
 }
