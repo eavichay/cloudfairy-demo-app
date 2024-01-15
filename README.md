@@ -26,7 +26,7 @@ MongoDB instance
 
 ## Hardcoded values (for demo purposes)
 ### front
-points to "bff.localhost:8000"
+points to "api.localhost:8000"
 ### bff
 Hardcoded environment variable names:
 - DB_HOST

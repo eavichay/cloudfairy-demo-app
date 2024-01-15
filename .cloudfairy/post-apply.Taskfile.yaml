@@ -1,7 +1,18 @@
 
 version: '3'
 tasks:
+  build_api:
+    dir: '{{.USER_WORKING_DIR}}/apps/webserver'
+    cmds:
+      - docker build -t localhost:5001/api:dev .
+      - docker push localhost:5001/api:dev
+  build_names:
+    dir: '{{.USER_WORKING_DIR}}/apps/randomnames'
+    cmds:
+      - docker build -t localhost:5001/namesservice:dev .
+      - docker push localhost:5001/namesservice:dev
   default:
+    deps: [build_api, build_names]
     dir: '{{.USER_WORKING_DIR}}'
     cmds:
       - echo "Running post-apply. tasks"

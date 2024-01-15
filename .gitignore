@@ -3,6 +3,8 @@ dist
 .cloudfairy.build
 .cloudfairy/ci-cd
 .DS_Store
+.cloudfairy/libraries/cloudfairy
+.cloudfairy/volume-data
 
 # In production, you might want to keep the following files
 cloudfairy.project.json

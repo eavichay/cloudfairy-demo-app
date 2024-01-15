@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 node:18-alpine
+FROM --platform=linux/amd64 node:18
 RUN mkdir -p /opt/app
 WORKDIR /opt/app
 COPY package.json /opt/app/
